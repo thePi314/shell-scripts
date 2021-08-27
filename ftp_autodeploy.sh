@@ -29,7 +29,7 @@ while test $# -gt 0; do
             echo "--host:      Define hostname for ftp connection"
             echo "--username:  Define ftp username"
             echo "--password:  Define passwor for specified ftp username"
-            echo "--directory: Define project root, default is current directory"
+            echo "--directory: Define project root, default is current directory exp: ./path/to/folider/"
             echo ""
             exit 1;
             ;;
@@ -50,6 +50,8 @@ exec_ftp_script="
 quote USER $arg_username
 quote PASS $arg_password
 cd public_html
+cd dev
+ascii
 "
 
 
